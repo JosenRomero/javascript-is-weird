@@ -1,0 +1,27 @@
+--- 
+interface Props {
+  title: string,
+  description: string
+}
+
+const { title, description } = Astro.props
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+  <body>
+    <div class="min-h-screen bg-gray-100">
+      <div class="p-8 container mx-auto">
+        <h1 class="text-center p-4 text-3xl font-bold">Javascript is weird</h1>
+        <slot />
+      </div>
+      </div>
+  </body>
+</html>
