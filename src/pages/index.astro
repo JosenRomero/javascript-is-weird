@@ -1,7 +1,10 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import TagList from "../components/TagList.astro";
 
 const allPosts = await Astro.glob('../pages/posts/*.md');
+
+const tags = [...new Set(allPosts.map((post) => post.frontmatter.tags).flat())]
 
 ---
 
@@ -9,15 +12,25 @@ const allPosts = await Astro.glob('../pages/posts/*.md');
   title="Javascript is weird"
 	description="home"
 >
-	<p class="text-2xl font-semibold">Lista de posts</p>
+	<div class="flex flex-col md:flex-row md:justify-between gap-5 mt-9">
 
-	<section class="pt-3">
-		{allPosts.map((post) => 
-			<a href={post.url} class="flex flex-col hover:bg-gray-200 p-2 [&>p]:hover:text-slate-800">
-				<h3 class="text-lg">{post.frontmatter.title}</h3>
-				<p class="text-base text-slate-800">{post.frontmatter.author}</p>
-			</a>
-		)}
-	</section>
+		<section>
+
+			<p class="text-2xl font-semibold mb-5">Lista de posts</p>
+
+			{allPosts.map((post) => 
+				<a href={post.url} class="flex flex-col hover:bg-gray-200 p-2 [&>p]:hover:text-slate-800">
+					<h3 class="text-lg">{post.frontmatter.title}</h3>
+					<p class="text-base text-slate-800">{post.frontmatter.author}</p>
+				</a>
+			)}
+		</section>
+
+		<section class="order-first md:order-last">
+			<p class="text-xl font-semibold mb-5">Lista de etiquetas</p>
+			<TagList tags={tags} />
+		</section>
+
+	</div>
 </BaseLayout>
 
