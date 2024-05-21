@@ -1,0 +1,12 @@
+pre {
+  padding: 15px;
+  margin: 15px 0px 15px 0px
+}
+
+a {
+  color: rgb(27, 117, 208);
+}
+
+a:hover {
+  color: rgb(21, 92, 162);
+}
