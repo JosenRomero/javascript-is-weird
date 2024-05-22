@@ -1,0 +1,27 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro"
+---
+
+<BaseLayout
+  title="Acerca de",
+  description="Javascript is weird"
+>
+  <div class="[&>*]:text-base/7 flex flex-col gap-3">
+
+    <h1 class="font-bold mt-5">Bienvenido a Javascript is weird</h1>
+
+    <p>Este blog está dedicado a explorar las curiosidades, peculiaridades y rarezas del lenguaje de programación JavaScript. Si eres un desarrollador experimentado, un entusiasta del código o alguien que recién comienza su aventura en el mundo de la programación, aquí encontrarás una colección de artículos y ejemplos que te sorprenderán y, a veces, te dejarán rascándote la cabeza.</p>
+
+    <p class="font-semibold">¿Por Qué JavaScript?</p>
+
+    <p>JavaScript es uno de los lenguajes de programación más populares y versátiles del mundo. Se utiliza en una gran variedad de aplicaciones, desde el desarrollo web hasta la creación de aplicaciones móviles y juegos. Sin embargo, como cualquier lenguaje, tiene sus propias rarezas y comportamientos inesperados que pueden ser tanto fascinantes como frustrantes.</p>
+  
+    <p class="font-semibold">¿Qué Encontrarás Aquí?</p>
+
+    <ul class="[&>li>em]:font-semibold">
+      <li><em>Artículos</em>: Descripción breve de los comportamientos inusuales de JavaScript, desde la coerción de tipos hasta los cierres (closures) y el manejo de promesas.</li>
+      <li><em>Ejemplos Prácticos</em>: Código ilustrativo que muestra las rarezas en acción.</li>
+    </ul>
+
+  </div>
+</BaseLayout>
