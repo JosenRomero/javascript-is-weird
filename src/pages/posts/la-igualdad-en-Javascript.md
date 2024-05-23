@@ -7,15 +7,15 @@ author: 'Josenromero'
 tags: ["tipos de datos", "igualdad"]
 ---
 
-La rareza típica de Javascript es la igualdad
+La rareza típica de Javascript es la igualdad.
 
-```
+```js
 new Array() == false // true
 ```
 
 Aquí tienes más ejemplos:
 
-```
+```js
 2 == "2" // true
 true == 1 // true
 "" == 0 // true
@@ -32,7 +32,7 @@ Si aún no sabes por que pasa esto te dejó un artículo que lo explica
 
 Para evitar sorpresas y posibles errores en tu código, lo recomendado es usar === en Lugar de ==
 
-```
+```js
 2 === "2" // false
 ```
 
