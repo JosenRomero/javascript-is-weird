@@ -25,4 +25,15 @@ undefined == null // true
 ```
 
 Si aún no sabes por que pasa esto te dejó un artículo que lo explica
-- [¿Cómo funciona realmente la igualdad ==?](https://midu.dev/como-funciona-el-operador-igualdad-simple-javascript/)
+
+<a href='https://midu.dev/como-funciona-el-operador-igualdad-simple-javascript/' target='_blank' rel='noreferrer'>¿Cómo funciona realmente la igualdad ==?</a>
+
+<br>
+
+Para evitar sorpresas y posibles errores en tu código, lo recomendado es usar === en Lugar de ==
+
+```
+2 === "2" // false
+```
+
+La comparación estricta === te ayuda a evitar muchos de los comportamientos extraños asociados con ==.
