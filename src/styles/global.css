@@ -5,10 +5,34 @@ pre {
   box-shadow: 0 10px 20px rgba(0,0,0,.3);
 }
 
+:not(pre) > code {
+  background: rgba(0,0,0,6%);
+  border-radius: 2px;
+  color: #1a1a1a;
+  padding: 2px 4px 1px;
+}
+
 a {
   color: rgb(27, 117, 208);
 }
 
 a:hover {
   color: rgb(21, 92, 162);
+}
+
+ol {
+  list-style-type: decimal;
+  list-style-position: inside;
+}
+
+h1 {
+  @apply text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl
+}
+
+h2 {
+  @apply text-2xl font-bold text-gray-900
+}
+
+h3 {
+  @apply mb-3 text-xl font-semibold text-gray-900
 }
