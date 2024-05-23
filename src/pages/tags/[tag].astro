@@ -31,9 +31,9 @@ const { posts } = Astro.props;
   title={tag}
   description={`post de ${tag}`}
 >
-  <p>Posts etiquetados con {tag}</p>
+  <h2 class="mb-3">Posts etiquetados con {tag}</h2>
 
-  <ul>
+  <ul class="flex flex-col gap-3">
     {posts.map((post) => 
       <li>
         <a href={post.url}>{post.frontmatter.title}</a>
