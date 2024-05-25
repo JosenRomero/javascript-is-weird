@@ -9,6 +9,14 @@ const { frontmatter } = Astro.props;
   description={frontmatter.description}
 >
   <h2>{frontmatter.title}</h2>
-  <p class="pt-3 pb-11">Escrito por <span class="font-semibold">{frontmatter.author}</span> | Publicado el: {frontmatter.pubDate.toString().slice(0,10)}</p>
+  <div class="flex items-center space-x-4 my-9">
+    <picture>
+      <img class="w-11 h-11 rounded-full" src={`https://github.com/${frontmatter.author}.png`} />
+    </picture>
+    <div>
+      <a href={`https://github.com/${frontmatter.author}`} class="text-slate-800 hover:text-slate-800 font-semibold hover:underline" target='_blank' rel='noreferrer'>{frontmatter.author}</a>
+      <p class="mt-0.5 text-sm leading-6">Publicado el {frontmatter.pubDate.toString().slice(0,10)}</p>
+    </div>
+  </div>
   <slot />
 </BaseLayout>
