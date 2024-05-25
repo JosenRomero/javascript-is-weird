@@ -16,14 +16,25 @@ const tags = [...new Set(allPosts.map((post) => post.frontmatter.tags).flat())]
 
 		<section class="flex-1">
 
-			<p class="text-2xl font-semibold mb-5">Lista de posts</p>
+			<h2 class="mb-5">Lista de posts</h2>
 
-			{allPosts.map((post) => 
-				<a href={post.url} class="flex flex-col hover:bg-gray-200 p-2 [&>p]:hover:text-slate-800">
-					<h3 class="text-lg">{post.frontmatter.title}</h3>
-					<p class="text-base text-slate-800">{post.frontmatter.author}</p>
-				</a>
-			)}
+			<ul class="flex flex-col gap-8">
+				{allPosts.map((post) => 
+					<a href={post.url} class="flex gap-5 hover:bg-gray-200 items-center [&>p]:hover:text-slate-800">
+						<div class="flex  items-center">
+							<div class="flex flex-col text-center text-slate-500 text-2xl pr-2 border-r border-slate-500">
+								{post.frontmatter.pubDate.toString().slice(4,10).split("-").map((date: string) => 
+									<p>{date}</p>
+								)}
+							</div>
+						</div>
+						<div class="flex flex-col">
+							<h3 class="mb-1 mt-0">{post.frontmatter.title}</h3>
+							<p class="text-base text-slate-800">{post.frontmatter.author}</p>
+						</div>
+					</a>
+				)}
+			</ul>
 		</section>
 
 		<section class="order-first md:order-last flex-none">
