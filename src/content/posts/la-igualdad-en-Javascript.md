@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/PostLayout.astro
 title: 'La igualdad == en Javascript'
 pubDate: 2024-05-19
 description: 'Este es la primera publicación en Javascript is weird.'

@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/PostLayout.astro
 title: '0.1 + 0.2 == 0.3'
 pubDate: 2024-05-23
 description: 'La precisión de punto flotante en JavaScript.'

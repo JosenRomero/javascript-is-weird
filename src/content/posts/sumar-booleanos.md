@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/PostLayout.astro
 title: 'La suma de boleanos'
 pubDate: 2024-05-25
 description: 'En JavaScript es posible sumar valores booleanos.'
