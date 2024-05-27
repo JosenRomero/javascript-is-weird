@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
+import { formattedDate } from "../utils/utils";
 
 const { frontmatter } = Astro.props;
 ---
@@ -15,7 +16,7 @@ const { frontmatter } = Astro.props;
     </picture>
     <div>
       <a href={`https://github.com/${frontmatter.author}`} class="text-slate-800 hover:text-slate-800 font-semibold hover:underline" target='_blank' rel='noreferrer'>{frontmatter.author}</a>
-      <p class="mt-0.5 text-sm leading-6">Publicado el {frontmatter.pubDate.toString().slice(0,10)}</p>
+      <p class="mt-0.5 text-sm leading-6">Publicado el { formattedDate(frontmatter.pubDate, "long") }</p>
     </div>
   </div>
   <slot />

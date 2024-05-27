@@ -2,17 +2,14 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import TagList from "../components/TagList.astro";
 import { getCollection } from "astro:content";
+import { formattedDate } from "../utils/utils";
 
 const allPosts = await getCollection("posts");
 
 const tags = [...new Set(allPosts.map((post) => post.data.tags).flat())]
 
-const formattedDate = (pubDate: any) => {
-	return pubDate.toString().slice(0,10).replaceAll("-", "")
-}
-
 // sort all posts descending
-allPosts.sort((a, b) => formattedDate(b.data.pubDate) - formattedDate(a.data.pubDate))
+allPosts.sort((a, b) => formattedDate(b.data.pubDate).replaceAll("/", "") - formattedDate(a.data.pubDate).replaceAll("/", ""))
 
 ---
 
@@ -31,7 +28,7 @@ allPosts.sort((a, b) => formattedDate(b.data.pubDate) - formattedDate(a.data.pub
 					<a href={`/posts/${post.slug}`} class="flex gap-5 hover:bg-gray-200 items-center [&>p]:hover:text-slate-800">
 						<div class="flex  items-center">
 							<div class="flex flex-col text-center text-slate-500 text-2xl pr-2 border-r border-slate-500">
-								{post.data.pubDate.toString().slice(4,10).split("-").map((date: string) => 
+								{formattedDate(post.data.pubDate).split("/").slice(0, -1).map((date: string) => 
 									<p>{date}</p>
 								)}
 							</div>
