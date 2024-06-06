@@ -38,4 +38,4 @@ guía rápida:
 6. Haz Push a la Rama (`git push origin feature/MiContribucionIncreible`)
 7. Abre una [pull request](https://github.com/JosenRomero/javascript-is-weird/pulls)
 
-[guía de contribución](https://github.com/JosenRomero/javascript-is-weird/blob/master/CONTRIBUTING.md)
+[guía de contribución](https://github.com/JosenRomero/javascript-is-weird/blob/main/CONTRIBUTING.md)
